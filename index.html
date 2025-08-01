@@ -611,12 +611,15 @@
             <h2 class="section-title">See The Magic In Action</h2>
             
             <div class="demo-container">
+                <h3 style="text-align: center; margin-bottom: 30px; color: #e2e8f0;">✨ Testez OptiFlow IA en direct ✨</h3>
+                
                 <div class="demo-input">
-                    <input type="url" id="demoUrl" placeholder="https://techcrunch.com/your-article-url" value="">
+                    <label for="demoUrl" style="display: block; margin-bottom: 10px; color: #94a3b8; font-weight: 600;">📰 URL de l'article à transformer :</label>
+                    <input type="url" id="demoUrl" placeholder="https://techcrunch.com/votre-article" style="width: 100%; border: none; font-size: 1.1rem; outline: none; padding: 15px; background: transparent; color: #e2e8f0; border-radius: 8px;">
                 </div>
                 
                 <button class="demo-button" onclick="runDemo()">
-                    <span id="buttonText">🚀 Generate 25 Social Variants</span>
+                    <span id="buttonText">🚀 Générer 25 Variants Sociaux</span>
                 </button>
                 
                 <div id="demoResults" class="demo-results" style="display: none;">
@@ -948,14 +951,24 @@ Comment SAVED! 💬
         
         // Auto-fill demo URL
         window.addEventListener('load', function() {
-            document.getElementById('demoUrl').value = 'https://techcrunch.com/2024/08/01/ai-startup-funding-round';
+            const demoInput = document.getElementById('demoUrl');
+            if (demoInput) {
+                demoInput.value = 'https://techcrunch.com/2024/08/01/ai-startup-funding-round';
+                demoInput.placeholder = 'https://techcrunch.com/your-article-url';
+            }
         });
         
-        // Handle pricing button clicks
+        // Handle pricing button clicks - redirect to contact
         document.querySelectorAll('.plan-button').forEach(button => {
             button.addEventListener('click', function() {
                 const planName = this.closest('.pricing-card').querySelector('.plan-name').textContent;
-                alert(`🚀 Prêt à commencer avec ${planName} ? Contactez OptiFlow IA :\n\n📧 Email: iaoptiflow@gmail.com\n📱 WhatsApp: +213 698 194 028\n💬 LinkedIn: linkedin.com/in/optiflow-ia\n🗓️ Rdv direct par WhatsApp`);
+                
+                // Create WhatsApp message
+                const message = `Hello OptiFlow IA! I'm interested in the ${planName} plan. Can you contact me?`;
+                const whatsappUrl = `https://wa.me/213698194028?text=${encodeURIComponent(message)}`;
+                
+                // Open WhatsApp
+                window.open(whatsappUrl, '_blank');
             });
         });in/votre-profil\n🗓️ Calendly: calendly.com/optiflow-ia`);
             });
