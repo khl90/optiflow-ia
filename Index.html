@@ -1,0 +1,704 @@
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OptiFlow IA - Transform Any Article Into 25 Viral Posts</title>
+    <meta name="description" content="Generate 25 optimized social media variants from any article in 30 seconds. Trusted by 500+ agencies, startups, and creators.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 100%);
+            color: #e2e8f0;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        .header {
+            background: rgba(15, 15, 35, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #00d4ff, #9d4edd);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .nav-buttons {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .btn-secondary {
+            padding: 8px 20px;
+            background: transparent;
+            border: 2px solid #00d4ff;
+            color: #00d4ff;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary:hover {
+            background: #00d4ff;
+            color: #0f0f23;
+            transform: translateY(-2px);
+        }
+        
+        .btn-primary {
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #00d4ff, #9d4edd);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(0, 212, 255, 0.4);
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 212, 255, 0.6);
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 150px 0 100px;
+            text-align: center;
+            color: white;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero .subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            display: block;
+        }
+        
+        .stat-label {
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+        
+        .cta-section {
+            margin-top: 50px;
+        }
+        
+        .btn-hero {
+            padding: 20px 50px;
+            font-size: 1.2rem;
+            background: linear-gradient(135deg, #00d4ff, #9d4edd);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            box-shadow: 0 8px 30px rgba(0, 212, 255, 0.3);
+            transition: all 0.3s ease;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        
+        .btn-hero:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0, 212, 255, 0.5);
+        }
+        
+        .guarantee {
+            margin-top: 20px;
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+        
+        /* Demo Section */
+        .demo-section {
+            padding: 100px 0;
+            background: #16213e;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 60px;
+            color: #e2e8f0;
+        }
+        
+        .demo-container {
+            background: #0f0f23;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .demo-input {
+            background: #1a1a2e;
+            border: 2px solid rgba(0, 212, 255, 0.3);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .demo-input input {
+            width: 100%;
+            border: none;
+            font-size: 1.1rem;
+            outline: none;
+            padding: 10px 0;
+            background: transparent;
+            color: #e2e8f0;
+        }
+        
+        .demo-input input::placeholder {
+            color: #64748b;
+        }
+        
+        .demo-button {
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(135deg, #00d4ff, #9d4edd);
+            color: white;
+            border: none;
+            border-radius: 15px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .demo-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 212, 255, 0.4);
+        }
+        
+        .demo-results {
+            margin-top: 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        .platform-result {
+            background: #1a1a2e;
+            border-radius: 15px;
+            padding: 25px;
+            border-left: 5px solid #00d4ff;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .platform-name {
+            font-weight: 700;
+            color: #00d4ff;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .variant-preview {
+            background: #0f0f23;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 10px;
+            color: #cbd5e1;
+        }
+        
+        .engagement-score {
+            background: linear-gradient(135deg, #00d4ff, #9d4edd);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: inline-block;
+        }
+        
+        /* Features Section */
+        .features-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 100%);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .feature-card {
+            background: #16213e;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0, 212, 255, 0.2);
+            border-color: rgba(0, 212, 255, 0.3);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #e2e8f0;
+        }
+        
+        .feature-card p {
+            color: #94a3b8;
+            line-height: 1.6;
+        }
+        
+        /* Results Section */
+        .results-section {
+            padding: 100px 0;
+            background: #16213e;
+        }
+        
+        .results-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .result-card {
+            text-align: center;
+            padding: 40px 20px;
+        }
+        
+        .result-number {
+            font-size: 3.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #00d4ff, #9d4edd);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .result-label {
+            font-size: 1.1rem;
+            color: #94a3b8;
+            font-weight: 600;
+        }
+        
+        /* Pricing Section */
+        .pricing-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 100%);
+            color: white;
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+        
+        .pricing-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        .pricing-card.featured {
+            background: linear-gradient(135deg, #00d4ff, #9d4edd);
+            color: white;
+            transform: scale(1.05);
+        }
+        
+        .plan-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .plan-price {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 5px;
+        }
+        
+        .plan-period {
+            opacity: 0.7;
+            margin-bottom: 30px;
+        }
+        
+        .plan-features {
+            list-style: none;
+            margin-bottom: 40px;
+            text-align: left;
+        }
+        
+        .plan-features li {
+            padding: 8px 0;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .plan-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #4ade80;
+            font-weight: bold;
+        }
+        
+        .plan-button {
+            width: 100%;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .featured .plan-button {
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: white;
+        }
+        
+        .plan-button:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+        
+        /* CTA Section */
+        .final-cta {
+            padding: 100px 0;
+            background: #16213e;
+            text-align: center;
+        }
+        
+        .final-cta h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: #e2e8f0;
+        }
+        
+        .final-cta p {
+            font-size: 1.2rem;
+            color: #94a3b8;
+            margin-bottom: 40px;
+        }
+        
+        /* Footer */
+        .footer {
+            background: #1a202c;
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section h4 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .footer-section a {
+            color: #a0aec0;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-section a:hover {
+            color: white;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid #2d3748;
+            padding-top: 30px;
+            text-align: center;
+            color: #a0aec0;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-stats {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .nav-buttons {
+                display: none;
+            }
+            
+            .demo-results {
+                grid-template-columns: 1fr;
+            }
+            
+            .pricing-card.featured {
+                transform: none;
+            }
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-fade-in {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        
+        /* Loading Animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 1s ease-in-out infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <div class="logo">🚀 OptiFlow IA</div>
+            <div class="nav-buttons">
+                <a href="#demo" class="btn-secondary">Try Demo</a>
+                <a href="#pricing" class="btn-primary">Get Started</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Transform Any Article Into<br><strong>25 Viral Social Posts</strong></h1>
+            <p class="subtitle">AI-powered content generation that creates platform-optimized variants in 30 seconds. Used by 500+ agencies, startups, and creators worldwide.</p>
+            
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">25</span>
+                    <span class="stat-label">Variants Generated</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">5</span>
+                    <span class="stat-label">Platforms Covered</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">30s</span>
+                    <span class="stat-label">Processing Time</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">64%</span>
+                    <span class="stat-label">Avg Engagement</span>
+                </div>
+            </div>
+            
+            <div class="cta-section">
+                <a href="#demo" class="btn-hero">🔥 Try Free Demo</a>
+                <p class="guarantee">✅ No credit card required • ✅ Instant results</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section id="demo" class="demo-section">
+        <div class="container">
+            <h2 class="section-title">See The Magic In Action</h2>
+            
+            <div class="demo-container">
+                <div class="demo-input">
+                    <input type="url" id="demoUrl" placeholder="https://techcrunch.com/your-article-url" value="">
+                </div>
+                
+                <button class="demo-button" onclick="runDemo()">
+                    <span id="buttonText">🚀 Generate 25 Social Variants</span>
+                </button>
+                
+                <div id="demoResults" class="demo-results" style="display: none;">
+                    <div class="platform-result">
+                        <div class="platform-name">📱 Twitter</div>
+                        <div class="variant-preview">🔥 Premium tech Insights from techcrunch.com
+
+Key insights for professionals
+
+#tech #trending</div>
+                        <span class="engagement-score">75% Engagement</span>
+                    </div>
+                    
+                    <div class="platform-result">
+                        <div class="platform-name">💼 LinkedIn</div>
+                        <div class="variant-preview">📈 Strategic Insights: Premium tech analysis
+
+As professionals, this reveals key opportunities in tech.
+
+✅ Expert analysis for growth
+✅ Actionable strategies  
+✅ Future-proofing insights
+
+What's your take?
+
+#tech #strategy #leadership</div>
+                        <span class="engagement-score">75% Engagement</span>
+                    </div>
+                    
+                    <div class="platform-result">
+                        <div class="platform-name">📘 Facebook</div>
+                        <div class="variant-preview">🎯 Community Insight:
+
+Premium tech insights from leading experts...
+
+This explores tech from fresh angles.
+
+For our professional community:
+🔍 Deep analysis
+💼 Practical applications  
+🚀 Growth opportunities
+
+What would you implement? Share below!
+
+#community #tech</div>
+                        <span class="engagement-score">85% Engagement</span>
+                    </div>
+                    
+                    <div class="platform-result">
+                        <div class="platform-name">📸 Instagram</div>
+                        <div class="variant-preview">⚡ BREAKTHROUGH MOMENT ⚡
+
+"Premium tech insights that change everything!"
+
+💡 This changes everything!
+
+For my professional friends:
+✅ 1-min investment
+✅ Game-changing insights  
+✅ Competitive advantage
+
+Ready to level up? ❤️
+
+#breakthrough #tech #inspiration</div>
+                        <span class="engagement-score">85% Engagement</span>
+                    </div>
+                    
+                    <div class="platform-result">
+                        <div class="platform-name">🎵 TikTok</div>
+                        <div class="variant-preview">⚡ LIFE HACK UNLOCKED ⚡
+
+Premium tech insights revealed
+
+🤝 Helping y'all succeed!
+
+🎯 For professionals:
+→ 1-min read
+→ Industry secrets revealed
+→ Competitive edge activated
+
+Comment SAVED! 💬
+
+#lifehack #tech #fyp #viral #success</div>
+                        <span class="engagement-score">90%
